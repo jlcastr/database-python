@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+<div class="card border-info mb-13" >
+	<div class="card-header">Actualiza los campos que necesites y despues presiona el boton "Actualizar"</div>
+	
+		<div class="card-body">
+			<a href="/menuagencia" class="btn btn-danger" role="button" aria-disabled="true">Regresar</a>
+		
+		
+</div>
+
+
+  <div class="row">
+  	 <div class=" col-md-4 offset-md-4">
+      <div class="card card-body">
+        <form action="/updateautos/{{editarautos.0}}" method="POST">
+          <div class="form-group">
+          <code>&lt;Marca&gt;</code>	
+          <input type="text" name="fullmarca" value="{{editarautos.1}}" class="form-control">
+          </div>
+          <code>&lt;Modelo&gt;</code>
+          <div class="form-group">
+            <input type="text" name="fullmodelo" value="{{editarautos.2}}" class="form-control">
+          </div>
+          <code>&lt;Año&gt;</code>
+          <div class="form-group">
+            <input type="text" name="year" value="{{editarautos.3}}" class="form-control">
+          </div>
+          <code>&lt;Color&gt;</code>
+          <div class="form-group">
+            <input type="text" name="fullcolor" value="{{editarautos.4}}" class="form-control">
+          </div>
+          <code>&lt;Transmisión&gt;</code>
+          <div class="form-group">
+            <input type="text" name="fulltrans" value="{{editarautos.5}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <center><button type="submit" class="btn btn-primary">
+              Actualizar
+            </button>
+            </center>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

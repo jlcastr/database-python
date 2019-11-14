@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+</head>
+<body>
+
+
+<h1 align="center">Gestor de bases de datos</h1>
+<div class="card border-info" >
+
+    <div class="card border-info mb-13" >
+  
+  
+    <div class="card-body">
+      <a href="/" class="btn btn-danger" role="button" aria-disabled="true">Regresar</a>
+    
+    
+</div>
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Tablas </button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Ver todas las tablas</button>
+  
+</div>
+
+<div id="London" class="tabcontent">
+  <center>
+  <h3>Tablas disponibles para modificar</h3>
+  <div class="table-responsive">
+<table class=" table-secondary table-bordered table-hover table-sm">
+  <thead>
+    <tr class="table-primary">
+      <th scope="col">Tablas modificables</th> 
+      <th scope="col">Opciones</th> 
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ver registros de "autos"</td>
+      <td>
+        <a href="/menuagencia" class="btn btn-success">Ver</a>
+      </td>
+    </tr>
+    
+
+  </tbody>
+</table>
+</div>
+</div></center>
+
+
+<div id="Paris" class="tabcontent">
+ <center>
+  <h3>Todas las tablas</h3>
+ <div class="table-responsive">
+<table class=" table-secondary table-bordered table-hover table-sm">
+  <thead>
+    <tr class="table-primary">
+      <th scope="col">Tablas existentes</th> 
+    </tr>
+  </thead>
+  <tbody>
+    {% for tableallage in tableallage %}
+    <tr>
+      <td>{{tableallage}}</td>
+      
+      
+    </tr>
+    {% endfor%}
+  </tbody>
+</table></center>
+</div>
+</div></div>
+
+
+
+
+
+<div id="Tokyo" class="tabcontent">
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
+
+
+<tbody>
+    {% for tablealll in tableallesc %}
+    <tr>
+      <td>{{tablealll}}</td>
+      
+      <td>
+        <a class="btn btn-success">Ver</a>
+      </td>
+    </tr>
+    {% endfor%}
+  </tbody>

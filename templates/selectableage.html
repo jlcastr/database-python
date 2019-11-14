@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+
+
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-color: black;
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+</style>
+<body>
+{% block body %}
+
+  <div class="w3-display-middle">
+    <h1 align="center">Tablas</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="lead">{{dataall}}</p>
+  <center>
+
+
+
+
+  	<div class="card border-info" >
+  	<div class="card card-body">
+  		<div class="card-header">Total de tablas de la base "agencia"</div>
+  						<div class="card-body">
+
+
+    					
+<div class="table-responsive">
+<table class=" table-secondary table-bordered table-hover table-sm">
+	<thead>
+		<tr class="table-primary">
+			<th scope="col">Bases de datos existentes</th> 
+			<th scope="col">Opciones</th>
+			
+		</tr>
+	</thead>
+
+	<tbody>
+		{% for tableallage in tableallage %}
+		<tr>
+			<td>{{tableallage}}</td>
+			
+			<td>
+				<a class="btn btn-success">Ver</a>
+			</td>
+		</tr>
+		{% endfor%}
+	</tbody>
+</table>
+  </div>
+</div>
+</center>
+</div></div></div></div>
+
+
+  <div class="w3-display-bottomleft w3-padding-large">
+    Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+  </div>
+</div>
+{% endblock %}
+</body>
+</html>

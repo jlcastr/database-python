@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+
+
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-color: black;
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+</style>
+<body>
+{% block body %}
+
+  <div >
+    <h1 align="center">Bases de datos</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="lead">{{dataall}}</p>
+
+
+
+<div class="row">
+  	 <div class=" col-md-6 offset-md-2">
+      <div class="card card-body">
+
+
+
+	<h2>Bases de datos existentes</h2>
+		{% for dataalll in dataall %}
+		<ul>
+			<li>{{ dataalll}}</li>
+			</ul>
+		{% endfor%}
+		
+
+
+<div class="table-responsive">
+<table class=" table-secondary table-bordered table-hover table-sm">
+	<thead>
+		<tr class="table-primary">
+			<th scope="col">Bases de datos modificables</th> 
+			<th scope="col">Opciones</th> 
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Ver tablas de "agencia"</td>
+			<td>
+				<a class="btn btn-success">Ver</a>
+			</td>
+		</tr>
+		<tr>
+			<td>Ver tablas de "escuela"</td>
+			<td>
+				<a class="btn btn-success">Ver</a>
+			</td>
+		</tr>
+
+	</tbody>
+</table>
+</div>
+
+  </div>
+</div>
+</div></div></div>
+
+
+  <div class="w3-display-bottomleft w3-padding-large">
+    Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+  </div>
+</div>
+{% endblock %}
+</body>
+</html>
